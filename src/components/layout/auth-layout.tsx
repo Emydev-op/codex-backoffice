@@ -1,0 +1,20 @@
+import { Outlet } from "react-router";
+import { ScrollArea } from "../ui/scroll-area";
+
+export default function AuthLayout() {
+  return (
+    <ScrollArea className="w-screen h-screen grid place-content-center bg-linear-to-b from-primary to-sec relative py-6">
+      <div className="bg-[url(/image/authBg.png)] bg-fixed absolute inset-0 size-full bg-cover bg-center z-0" />
+      <div className="relative z-1 grid size-full md:w-130 space-y-5 px-3">
+        <img
+          src="/svg/logo-white.svg"
+          alt="codex logo"
+          className="mx-auto h-8 w-auto"
+        />
+        <div className="rounded-lg bg-white w-[93vw] md:w-full min-h-90 px-5 md:px-7 py-14 overflow-x-hidden">
+          <Outlet />
+        </div>
+      </div>
+    </ScrollArea>
+  );
+}
